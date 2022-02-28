@@ -1,0 +1,39 @@
+<button (click)="getHttpData()">Get HTTP Data</button>
+<p></p>
+
+<p>Messages</p>
+<div *ngFor="let message of messages">
+  <div class="">
+    <div class="card" style="width:18rem; margin-bottom: 15px">
+      <img class="card-img-top" [src]="message.Poster" alt="Card image cap" />
+      <div class="card-body">
+        <h5 class="card-title">{{ message.Title }}</h5>    
+        <p class="card-text">{{ message.Year }}</p>
+        <a href="#" class="btn btn-primary">Imdb</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="input-group mb-3">
+  <input
+    [(ngModel)]="initialSearch"
+    type="text"
+    class="form-control"
+    placeholder="Search"
+    aria-label="Search"
+    aria-describedby="basic-addon1"
+  />
+</div>
+<div class="input-group mb-3">
+  <input
+    [(ngModel)]="searchTerm"
+    (ngModelChange)="()"
+    type="text"
+    class="form-control"
+    placeholder="Narrow Search"
+    aria-label="Narrow Search"
+    aria-describedby="basic-addon1"
+  />
+</div>
+<p></p>
+<button (click)="clear()">Clear</button>
